@@ -124,5 +124,6 @@ STATIC_URL = '/home/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# LOGIN_REDIRECT_URL = 'blog-home'
-# LOGIN_URL = 'login'
+# Login Variables.
+LOGIN_REDIRECT_URL = 'zash-home'
+LOGIN_URL = 'login'
