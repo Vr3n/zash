@@ -122,8 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/home/static/'
 
+# Crispy Template.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# Login Variables.
+# For login redirects
 LOGIN_REDIRECT_URL = 'zash-home'
 LOGIN_URL = 'login'
+
+# Link of  where media to be stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
