@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
+    'dashboard.apps.DashboardConfig',
     'crispy_forms',
 ]
 
@@ -132,3 +133,6 @@ LOGIN_URL = 'login'
 # Link of  where media to be stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# For Password Reset
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # for development only

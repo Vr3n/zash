@@ -1,9 +1,13 @@
-from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 # Create your views here.
+
+# Function for User Registration
 def register(request):
   if request.method == 'POST':
     form = UserRegisterForm(request.POST)
@@ -16,6 +20,7 @@ def register(request):
     form = UserRegisterForm()
   return render(request, 'users/register.html',{'form':form, 'title':'Register'})
 
+# Function to View Profile
 @login_required
 def profile(request):
   if request.method == "POST":
@@ -41,3 +46,21 @@ def profile(request):
   }
 
   return render(request, 'users/profile.html', context)
+
+# Function for changing Password
+def change_password(request):
+  if request.method == 'POST':
+    form = PasswordChangeForm(request.user, request.POST)
+    if form.is_valid():
+      user = form.save()
+      update_session_auth_hash(request, user) # if we don't pass this The user session will be terminated and have to login again.
+      messages.success(request, 'Your passsword was successfully changed!!')
+      return redirect('profile')
+    else:
+      messages.error(request, 'Please correct the error!!')
+  else:
+    form = PasswordChangeForm(request.user)
+  context = {
+    'form':form  
+  }
+  return render(request, 'users/change_password.html', context)

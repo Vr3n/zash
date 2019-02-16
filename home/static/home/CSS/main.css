@@ -1,11 +1,13 @@
 body {
-    background: #fefefe;
+    background: #dfdfdf;
     color: #000000;
     margin-top: 5rem; 
 }
 
-
 ul {
     margin: 0;
 }
-    
+
+nav {
+    border-bottom: 0.5px solid #b2a6a3;
+}
