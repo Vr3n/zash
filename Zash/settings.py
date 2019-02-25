@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'dashboard.apps.DashboardConfig',
     'crispy_forms',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -121,13 +122,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/home/static/'
+STATIC_URL = '/static/'
 
 # Crispy Template.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # For login redirects
-LOGIN_REDIRECT_URL = 'zash-home'
+LOGIN_REDIRECT_URL = 'zash-dashboard'
 LOGIN_URL = 'login'
 
 # Link of  where media to be stored
@@ -135,4 +136,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # For Password Reset
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # for development only
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # for development only

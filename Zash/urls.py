@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='zash-home'),
     path('/', include('users.urls')),
+    path('/', include('dashboard.urls'))
 ]
 
 if settings.DEBUG:
