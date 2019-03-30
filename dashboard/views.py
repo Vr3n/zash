@@ -10,12 +10,10 @@ from users.models import Profile, CustomUser
 from .forms import UploadFileForm
 from .models import Files
 
-
-from django_searchbar.mixins import SearchBarViewMixin  # Search Bar
-
 # Create your views here.
 
 # File Upload View.
+
 
 def UploadFile(request):
     if request.method == "POST":
@@ -65,31 +63,3 @@ class FileListView(ListView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Dashboard'
         return context
-<<<<<<< HEAD
-=======
-
-""" For Viewing the default Name of uploaded File.
-
-file_default_name = Files.objects.create(attachment=file)
-file_default_name.filename 
-
-# file name as a string is returned.
-
-"""
-# Search Bar
-class FilterView(SearchBarViewMixin, ListView):
-    model = Files
-    method = "GET"
-    search_fields = ['name']    # Search in "name" field of model
-
-# class FilterView(SearchBarViewMixin, ListView):
-# #def FilterView(request, ListView):
-#     model = Files
-#     search_fields = ['name']    # Search in "name" field of model
-#     # search_str = "" # Initiaize to Blank
-
-#     # if "dashboard_search" in request.GET:
-#     #     search_str = request.GET['search']
-
-#     # queryset = Files.objects.filter(name__icontains = search_str)
->>>>>>> bd0737e0fdce215a068daf25099c766a038972b9
