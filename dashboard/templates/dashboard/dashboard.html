@@ -1,5 +1,29 @@
 {% extends 'home/base.html' %}
 {% block content %}
+
+<!-- Search Bar -->
+<form method = "GET">
+    <input type = "text" 
+        placeholder = "Type here"
+        name = "dashboard_search"
+        >
+        </input>
+    <button type = "submit">
+    Search Now!
+    </button>
+</form>
+
+<!--
+    <input class = "Search_textbox"
+        type = "search"
+        placeholder = "Type your Search here"
+        name = "dashboard_search"
+        value = {{search}}
+    >
+    </input>
+    
+-->
+<!-- File Display-->
     <table class='table'>
         <thead>
             <th>Name</th>
