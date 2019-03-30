@@ -13,8 +13,21 @@
       </div>
     </form>
     <div class='border-top pt-3'>
-      <small class='text-muted'>Can't Access Account? <a href="{% url 'password_reset' %}" class='ml-2'>Reset Password</a></small>
-      <small class='text-muted'>Don't have an Account? <a href="{% url 'register' %}" class='ml-2'>Sign Up</a></small>
+      <div class="row">        
+        <div class="col-md-6">
+          <small class='text-muted'>Can't Access Account? <a href="{% url 'password_reset' %}" class='ml-2'>Reset Password</a></small>
+          </br>
+          <small class='text-muted'>Don't have an Account? <a href="{% url 'register' %}" class='ml-2'>Sign Up</a></small>        
+        </div>
+      </div>  
+    </div>      
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          {% load static %}
+          <img src={% static "home/IMAGES/login.png" %} alt="Login Image" id='login-img' height='500' width='500'>
+        </div>
+      </div>
     </div>
   </div>
 {% endblock content %}

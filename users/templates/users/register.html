@@ -15,5 +15,13 @@
     <div class='border-top pt-3'>
       <small class='text-muted'>Already have an Account? <a href="{% url 'login' %}" class='ml-2'>Sign In</a></small>
     </div>
+    <div class="container-fluid">
+      <div class="row"> 
+        <div class="col-md-6">
+          {% load static %}
+          <img src={% static "home/IMAGES/register.png" %} alt="Login Image" id='login-img' height='500' width='500'>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock content %}

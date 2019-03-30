@@ -1,7 +1,7 @@
 body {
-    background: #dfdfdf;
+    background: #ffffff;
     color: #000000;
-    margin-top: 5rem; 
+    margin-top: 5rem;
 }
 
 ul {
@@ -10,4 +10,8 @@ ul {
 
 nav {
     border-bottom: 0.5px solid #b2a6a3;
+}
+
+nav a {
+    margin: 0 20px 0 20px;
 }
