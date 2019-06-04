@@ -6,6 +6,7 @@ from .views import (register,
                     profile)
 from . import views
 
+
 # Write your url patterns Here.
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
@@ -20,4 +21,4 @@ urlpatterns = [
     re_path('reset/<uidb64>/<token>', auth_views.PasswordResetCompleteView,
             name='password_reset_complete'),
 ]
-     
+

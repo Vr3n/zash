@@ -76,6 +76,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Zash.wsgi.application'
 
+# REST pagination.
+REST_FRAMEWORK ={
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -139,3 +144,4 @@ MEDIA_URL = '/media/'
 
 # For Password Reset
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # for development only
+

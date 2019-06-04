@@ -18,14 +18,20 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
 from home.views import *
+from users import views
+
+# router = routers.DefaultRouter()
+# router.register(r'users', views.UserViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='zash-home'),
     path('', include('users.urls')),
     path('dashboard/', include('dashboard.urls')),
-    path('api-view/', userprofile, name='user-api')
+    # path('api-view/', include('rest_framework.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

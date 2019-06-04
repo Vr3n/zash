@@ -56,9 +56,6 @@ class FileListView(ListView):
     context_object_name = 'Files'
     ordering = ['-uploaded_at']
 
-    def get_queryset(self):
-        pass
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Dashboard'
