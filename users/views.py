@@ -6,8 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from .models import CustomUser
-from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer
 
 # Create your views here.
 
