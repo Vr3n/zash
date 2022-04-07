@@ -24,7 +24,7 @@ class CustomUserManager(BaseUserManager):
         user.set_password(password)
         user.save(using=self._db)
         return user
-
+ 
     def create_superuser(self, username, email, password=None):
         user = self.create_user(
             username, email, password=password
@@ -32,9 +32,9 @@ class CustomUserManager(BaseUserManager):
         user.is_admin = True
         user.is_staff = True
         user.save(using=self._db)
-        return user
+        return user 
 
-
+        
 # Custom User model (Overrides the default Django User model)
 
 

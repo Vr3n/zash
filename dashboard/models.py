@@ -25,4 +25,4 @@ class Files(models.Model):
     # Function delete files from media folder
     def delete(self, *args, **kwargs):
         self.File.delete()
-        super().delete(*args, **kwargs)
+        super().delete(*args, **kwargs) 

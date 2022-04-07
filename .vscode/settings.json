@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/home/vr3n/Installs/Zash/bin/python",
-    "workbench.iconTheme": "vscode-icons"
+    "python.pythonPath": "D:\\src\\Installs\\Zash\\Scripts\\python.exe",
+    "workbench.iconTheme": "material-icon-theme"
 }

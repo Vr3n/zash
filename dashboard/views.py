@@ -14,8 +14,9 @@ from .models import Files
 
 # File Upload View.
 
-
+@login_required
 def UploadFile(request):
+    form = UploadFileForm()
     if request.method == "POST":
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -24,8 +25,6 @@ def UploadFile(request):
             instance.save()
             messages.success(request, 'File Uploaded Successfully!!')
             return redirect('zash-dashboard')
-    else:
-        form = UploadFileForm()
     context = {
         'form': form,
         'title': 'Upload',
@@ -39,7 +38,7 @@ def UploadFile(request):
 
 # Function to Delete File.
 
-
+@login_required
 def delete_file(request, pk):
     if request.method == "POST":
         file = Files.objects.get(pk=pk)
@@ -50,7 +49,7 @@ def delete_file(request, pk):
 # Viewing the files in list.
 
 
-class FileListView(ListView):
+class FileListView(LoginRequiredMixin, ListView):
     model = Files
     template_name = 'dashboard/dashboard.html'
     context_object_name = 'Files'
